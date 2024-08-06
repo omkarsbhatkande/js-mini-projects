@@ -67,9 +67,12 @@ ul li{
   list-style: none;
   font-size: 17px;
   padding: 12px 8px 12px 50px;
-  user-select: none;
+  -webkit-user-select: none; /* Safari 3+, Safari on iOS */
+  user-select: none; /* Standard syntax */
   cursor: pointer;
+  position: relative;
 }
+
 
 ul li::before{
   content: '';
@@ -84,12 +87,12 @@ ul li::before{
   left: 8px;
 }
 
-ul li .checked{
+ul li.checked{
   color: #555;
   text-decoration: line-through;
 }
 
-ul li .checked::before{
+ul li.checked::before{
   background-image: url(images/checked.png);
 }
 
@@ -103,6 +106,7 @@ ul li span{
   color: #555;
   line-height: 40px;
   text-align: center;
+  border-radius: 50px;
 }
 
 ul li span:hover{
