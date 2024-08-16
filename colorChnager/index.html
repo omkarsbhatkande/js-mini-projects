@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    span{
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 2px solid #212121;
+    }
+
+    #gray{
+      background-color: gray;
+    }
+    #white{
+      background-color: white;
+    }
+    #yellow{
+      background-color: yellow;
+    }
+    #green{
+      background-color: green;
+    }
+  </style>
+
+
+  <h1>Color Scheme Swicher</h1>
+<span id="gray" class="button">a</span>
+<span id="white" class="button">b</span>
+<span id="yellow" class="button">c</span>
+<span id="green" class="button">d</span>
+
+
+<script>
+  const body = document.querySelector("body");
+  const buttons = document.querySelectorAll(".button");
+
+  buttons.forEach((button)=>{
+    //console.log(button);
+    button.addEventListener("click" ,(e)=>{
+      //console.log(e.target.id);
+      switch (e.target.id) {
+        case "gray":
+          body.style.backgroundColor ="gray"
+          //body.style.backgroundColor =e.target.id
+          break;
+      case "white":
+      body.style.backgroundColor ="white"
+      //body.style.backgroundColor =e.target.id
+      break;
+      case "yellow":
+      body.style.backgroundColor ="yellow"
+      //body.style.backgroundColor =e.target.id
+      break;
+      case "green":
+      body.style.backgroundColor ="green"
+      //body.style.backgroundColor =e.target.id
+      break;
+        default:
+          break;
+      }
+    })
+  })
+</script>
+</body>
+</html>

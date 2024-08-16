@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Changer</title>
+</head>
+<body>
+<style>
+
+  h1{
+    align-items: center;
+    justify-content: center;
+  }
+  button{
+    background-color: rgb(82, 102, 121);
+    padding: 10px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 2px solid #212121;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+
+
+
+<h1>Color Scheme Swicher</h1>
+<button id="gray" class="button">a</button>
+<button id="white" class="button">b</button>
+<button id="yellow" class="button">c</button>
+<button id="green" class="button">d</button>
+
+<script>
+let gray = document.getElementById("gray");
+let white = document.getElementById("white");
+let yellow = document.getElementById("yellow");
+let green = document.getElementById("green");
+
+gray.addEventListener("click" , ()=>{
+  gray.style.backgroundColor= "red";
+  setTimeout(()=>{
+    gray.style.backgroundColor= " #212121";
+    gray.style.color = "white"
+  },3000);
+});
+
+white.addEventListener("click" , ()=>{
+  white.style.backgroundColor= "white";
+  setTimeout(()=>{
+    white.style.backgroundColor= " #212121";
+    white.style.color = "white"
+  },3000);
+});
+
+
+yellow.addEventListener("click" , ()=>{
+  yellow.style.backgroundColor= "yellow";
+  setTimeout(()=>{
+    yellow.style.backgroundColor= " #212121";
+   yellow.style.color = "white"
+  },3000);
+});
+
+
+green.addEventListener("click" , ()=>{
+  green.style.backgroundColor= "green";
+  setTimeout(()=>{
+    green.style.backgroundColor= " #212121";
+    green.style.color = "white"
+  },3000);
+});
+</script>
+</body>
+</html>
