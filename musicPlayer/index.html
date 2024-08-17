@@ -5,11 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Music Player</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/71c43d68b9.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="container">
     <div class="music-player">
-      
+      <nav>
+        <div class="circle">
+          <i class="fa-solid fa-angle-left"></i>
+        </div>
+        <div class="circle">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </nav>
+      <img src="./songImg.png" alt="" class="song-img">
+      <h1>coka cola</h1>
+      <p>Rabbit</p>
+
+      <audio controls id="song">
+        <source src="./PatilSong.mp3" type="audio/mpeg">
+      </audio>
+      <input type="range" value="0" id="progress">
+
+      <div class="controls">
+        <div>
+          <i class="fa-solid fa-backward"></i>
+        </div>
+        <div onclick="playPaus()">
+          <i class="fa-solid fa-play" id="ctrlI"></i>
+        </div>
+        <div>
+          <i class="fa-solid fa-forward"></i>
+        </div>
+      </div>
     </div>
   </div>
 
