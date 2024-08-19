@@ -9,7 +9,7 @@ body{
 
 .stopwatch{
   width: 90%;
-  background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)url(./images/background.png));
+  background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(images/background.png);
   background-size: cover;
   background-position: center;
   text-align: center;
@@ -38,5 +38,5 @@ body{
 }
 
 .buttons img:nth-child(2){
-  
+  width: 80px;
 }
