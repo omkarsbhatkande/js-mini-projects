@@ -10,8 +10,36 @@
   <div class="hero">
     <h3>Coming Soon !</h3>
     <h1>OuerBrand New <br>Website is on its way</h1>
+    <p>Subscribe for more details.</p>
+    <form name="submit-to-google-sheet">
+      <input type="email" name="email" placeholder="Your Emaid Id">
+      <button type="submit"><img src="send-icon.png" alt="" width="30px"></button>
+    </form>
+    <span id="msg"></span>
   </div>
 
+
+
+
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbz5PxrlAs6YedA3TsQDm6wrj1C3AftL_l8yBrAoAsnyjoIMhqigXswTxJgxyhHOi8vrIQ/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML =""
+            setTimeout(()=>{
+              msg.innerHTML ="Thank Your For Subscribing !"
+            },3000)
+            form.reset();
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
   <script src="app.js"></script>
 </body>
 </html>
