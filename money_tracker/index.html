@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Money Management</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.2/xlsx.full.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Money Management System</h1>
+      <form id="money-form">
+        <label for="salary">Salary (₹):</label>
+        <input type="number" id="salary" name="salary" required />
+
+        <label for="loan-emi">Loan EMI (₹):</label>
+        <input type="number" id="loan-emi" name="loan-emi" required />
+
+        <label for="petrol">Petrol Expenses (₹):</label>
+        <input type="number" id="petrol" name="petrol" required />
+
+        <label for="sip">SIP Amount (₹):</label>
+        <input type="number" id="sip" name="sip" required />
+
+        <label for="gym">Gym Fee (₹):</label>
+        <input type="number" id="gym" name="gym" required />
+
+        <label for="solar">Solar Saving (₹):</label>
+        <input type="number" id="solar" name="solar" required />
+
+        <label for="custom-expenses">Custom Expense Category Name:</label>
+        <input
+          type="text"
+          id="custom-expenses"
+          name="custom-expenses"
+          placeholder="Enter expense category"
+        />
+
+        <label for="custom-expenses-amount">Custom Expense Amount (₹):</label>
+        <input
+          type="number"
+          id="custom-expenses-amount"
+          name="custom-expenses-amount"
+          placeholder="Enter amount"
+        />
+
+        <label for="custom-savings">Custom Saving Category Name:</label>
+        <input
+          type="text"
+          id="custom-savings"
+          name="custom-savings"
+          placeholder="Enter saving category"
+        />
+
+        <label for="custom-savings-amount">Custom Saving Amount (₹):</label>
+        <input
+          type="number"
+          id="custom-savings-amount"
+          name="custom-savings-amount"
+          placeholder="Enter amount"
+        />
+
+        <button type="submit">Generate Excel</button>
+      </form>
+
+      <div id="excel-download" style="display: none">
+        <button onclick="downloadExcel()">Download Excel Sheet</button>
+      </div>
+
+      <canvas id="expense-summary" width="400" height="200"></canvas>
+      <canvas id="expense-trend" width="400" height="200"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

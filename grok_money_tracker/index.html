@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Money Management</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- SheetJS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <!-- Google Fonts (Poppins) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="font-poppins">
+    <div class="container mx-auto p-4 md:p-8 max-w-5xl">
+      <!-- Header -->
+      <h1
+        class="text-4xl md:text-5xl font-bold text-center text-black mb-10 drop-shadow-lg"
+      >
+        Money Management
+      </h1>
+
+      <!-- Input Form -->
+      <div class="card glass p-6 mb-8">
+        <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+          Add Transaction
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-gray-600">Type</label>
+            <select
+              id="type"
+              class="w-full p-3 border rounded-lg bg-white focus:ring-2 focus:ring-teal-400"
+            >
+              <option value="income">Income</option>
+              <option value="expense">Expense</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-gray-600">Category</label>
+            <input
+              id="category"
+              type="text"
+              placeholder="e.g., Salary, Rent"
+              class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-teal-400"
+            />
+          </div>
+          <div>
+            <label class="block text-gray-600">Amount</label>
+            <input
+              id="amount"
+              type="number"
+              placeholder="Enter amount"
+              class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-teal-400"
+            />
+          </div>
+          <div>
+            <label class="block text-gray-600">Description</label>
+            <input
+              id="description"
+              type="text"
+              placeholder="Optional"
+              class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-teal-400"
+            />
+          </div>
+        </div>
+        <button
+          onclick="addTransaction()"
+          class="mt-4 bg-teal-500 text-white px-6 py-3 rounded-lg hover:bg-teal-600 transition-transform transform hover:scale-105"
+        >
+          Add
+        </button>
+      </div>
+
+      <!-- Summary -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+        <div class="card glass p-4 text-center">
+          <h3 class="text-lg font-semibold text-green-800">Total Income</h3>
+          <p id="total-income" class="text-2xl font-bold text-green-600">₹0</p>
+        </div>
+        <div class="card glass p-4 text-center">
+          <h3 class="text-lg font-semibold text-red-800">Total Expenses</h3>
+          <p id="total-expenses" class="text-2xl font-bold text-red-600">₹0</p>
+        </div>
+        <div class="card glass p-4 text-center">
+          <h3 class="text-lg font-semibold text-blue-800">Balance</h3>
+          <p id="balance" class="text-2xl font-bold text-blue-600">₹0</p>
+        </div>
+      </div>
+
+      <!-- Transactions Table -->
+      <div class="card glass p-6 mb-8">
+        <h2 class="text-2xl font-semibold mb-4 text-gray-800">Transactions</h2>
+        <table class="w-full text-left">
+          <thead>
+            <tr class="bg-gray-100">
+              <th class="p-3">Type</th>
+              <th class="p-3">Category</th>
+              <th class="p-3">Amount</th>
+              <th class="p-3">Description</th>
+              <th class="p-3">Action</th>
+            </tr>
+          </thead>
+          <tbody id="transaction-table"></tbody>
+        </table>
+      </div>
+
+      <!-- Chart -->
+      <div class="card glass p-6 mb-8">
+        <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+          Expense Breakdown
+        </h2>
+        <div class="chart-container">
+          <canvas id="expense-chart"></canvas>
+        </div>
+      </div>
+
+      <!-- Export Button -->
+      <button
+        onclick="exportToExcel()"
+        class="bg-purple-500 text-black px-6 py-3 rounded-lg hover:bg-purple-600 transition-transform transform hover:scale-105"
+      >
+        Download Excel
+      </button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

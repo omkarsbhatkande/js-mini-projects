@@ -1,0 +1,64 @@
+body {
+  background: linear-gradient(135deg, #6b7280, #4b5e8e);
+  min-height: 100vh;
+  color: #1f2937;
+}
+
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Glassmorphism Card */
+.card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Smaller Chart */
+.chart-container {
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+/* Table Styling */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+th,
+td {
+  border: 1px solid rgba(229, 231, 235, 0.3);
+  padding: 12px;
+}
+
+th {
+  background: rgba(243, 244, 246, 0.5);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Color for Coral */
+.bg-coral-500 {
+  background-color: #ff6b6b;
+}
+.bg-coral-600 {
+  background-color: #e55a5a;
+}
+
+.card {
+  width: 512px;
+}
